@@ -3,7 +3,11 @@ public class Equipe{
   protected String nomEquipe;
 
   public Equipe(String nomEquipe){
+    int i;
     this.nomEquipe = nomEquipe;
+    for(i = 0; i < listJoueurs.length; i++)
+      listJoueurs[i] = new Joueur();
+
   }
 
 

@@ -20,14 +20,25 @@ public class Joueur extends Equipe{
     this.nom = nom;
     this.general = general;
     idJoueur = compt++;
+    nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
   }
 
   public Joueur(String nom){
     this.nom = nom;
     general = 1 + (int)(Math.random() * ((10 - 1) + 1));
+    nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
+
   }
 
+  public Joueur(){
+    general = 1 + (int)(Math.random() * ((10 - 1) + 1));
+    nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
 
+    if(nationalite == "Francais"){
+      this.nom = listeDePrenomJoueursFr[0 + (int)(Math.random() * ((listeDePrenomJoueursFr.length - 0) + 1))]+" "+listeDeNomJoueursFr[0 + (int)(Math.random() * ((listeDeNomJoueursFr.length - 0) + 1))];
+    }
+
+  }
 
 
 
