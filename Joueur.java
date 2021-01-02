@@ -1,5 +1,5 @@
-public class Joueur{
-  private String nom;
+public class Joueur extends Equipe{
+  private String nomJoueur;
   private int general;
   private int moral;
 
