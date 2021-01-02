@@ -4,7 +4,6 @@ public class Equipe{
 
   public Equipe(String nomEquipe){
     this.nomEquipe = nomEquipe;
-
   }
 
 

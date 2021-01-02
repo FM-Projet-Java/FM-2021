@@ -12,10 +12,14 @@ public class Joueur extends Equipe{
   private String[] listePrenomJoueursEsp = {"Hugo","Diego","Elio","Pablo","Elias","Esteban","Lorenzo","Ruben","Luis","Lisandro","Paco","Miguel"};
   private String[] listePrenomJoueursAng = {"Bradley","Michael","Matthew","Joshua","Nicholas","Christopher","Joseph","Ethan","Andrew","Daniel","William","Anthony"};
   private String[] listePrenomJoueursAll = {"Stephan","Wilfried","Ludwig","Lukas","Erwin","Hermann","Franz","Kurt","Fritz","Siegfried","Leni"};
+  private int idJoueur;
+  private static int compt = 0;
+
+
   public Joueur(String nom, String general){
     this.nom = nom;
     this.general = general;
-
+    idJoueur = compt++;
   }
 
   public Joueur(String nom){
