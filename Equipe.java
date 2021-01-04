@@ -11,4 +11,8 @@ public class Equipe{
   }
 
 
+  public changerNomEquipe(String nouveauNom){
+    nomEquipe = nouveauNom;
+  }
+
 }

@@ -19,24 +19,31 @@ public class Joueur extends Equipe{
   public Joueur(String nom, String general){
     this.nom = nom;
     this.general = general;
-    idJoueur = compt++;
     nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
+    idJoueur = compt++;
   }
 
   public Joueur(String nom){
     this.nom = nom;
-    general = 1 + (int)(Math.random() * ((10 - 1) + 1));
+    this.general = 1 + (int)(Math.random() * ((10 - 1) + 1));
     nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
+    idJoueur = compt++;
 
   }
 
   public Joueur(){
-    general = 1 + (int)(Math.random() * ((10 - 1) + 1));
+    this.general = 1 + (int)(Math.random() * ((10 - 1) + 1));
     nationalite = listeDeNationalites[0 + (int)(Math.random() * ((listeDeNationalites.length - 0) + 1))];
+    idJoueur = compt++;
 
-    if(nationalite == "Francais"){
+    if(nationalite == "Francais")
       this.nom = listeDePrenomJoueursFr[0 + (int)(Math.random() * ((listeDePrenomJoueursFr.length - 0) + 1))]+" "+listeDeNomJoueursFr[0 + (int)(Math.random() * ((listeDeNomJoueursFr.length - 0) + 1))];
-    }
+    if(nationalite == "Allemand")
+      this.nom = listeDePrenomJoueursFr[0 + (int)(Math.random() * ((listeDePrenomJoueursAll.length - 0) + 1))]+" "+listeDeNomJoueursAll[0 + (int)(Math.random() * ((listeDeNomJoueursAll.length - 0) + 1))];
+    if(nationalite == "Anglais")
+      this.nom = listeDePrenomJoueursAng[0 + (int)(Math.random() * ((listeDePrenomJoueursAng.length - 0) + 1))]+" "+listeDeNomJoueursAng[0 + (int)(Math.random() * ((listeDeNomJoueursAng.length - 0) + 1))];
+    if(nationalite == "Espagnol")
+      this.nom = listeDePrenomJoueursEsp[0 + (int)(Math.random() * ((listeDePrenomJoueursEsp.length - 0) + 1))]+" "+listeDeNomJoueursEsp[0 + (int)(Math.random() * ((listeDeNomJoueursEsp.length - 0) + 1))];
 
   }
 
