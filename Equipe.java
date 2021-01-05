@@ -13,10 +13,10 @@ public class Equipe{
   private int matchsJoues = 0;
 
   public Equipe(String nomEquipe){ //Constructeur qui necessite le nom de l'equipe
-  
+    int i;
     this.nomEquipe = nomEquipe;
     listeEquipesRencontres.add(nomEquipe);
-    for(int i = 0; i < 11; i++){
+    for(i = 0; i < 11; i++){
       listJoueurs[i] = new Joueur();
       listJoueurs[i].changerEquipeActuelle(this);
       generalEquipe += listJoueurs[i].getGeneralJoueur();

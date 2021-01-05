@@ -1,8 +1,8 @@
 public class Match{
   private Equipe equipe1;
   private Equipe equipe2;
-  private double probaVictoireE1 = 0.5;
-  private double probaVictoireE2 = 0.5;
+  private double probaVictoireE1 ;
+  private double probaVictoireE2 ;
   private int nbToursE1 = 0;
   private int nbToursE2 = 0;
   private int nbButsE1 = 0;
@@ -11,6 +11,10 @@ public class Match{
   public Match(Equipe equipe1, Equipe equipe2){
     this.equipe1 = equipe1;
     this.equipe2 = equipe2;
+    // On confere une proba de victoire aux equipes selon leur general
+    probaVictoireE1=0.5+(((double)(equipe1.getGeneralEquipe())-(double)(equipe2.getGeneralEquipe()))/1000) ;
+    probaVictoireE2=0.5+(((double)(equipe2.getGeneralEquipe())-(double)(equipe1.getGeneralEquipe()))/1000);
+    
   }
 
 
@@ -24,39 +28,34 @@ public class Match{
     Si les nb de buts marques de chaque equipe sont egaux il y a match nul.
     */
 
-    int i;
-    double nombreAleatoire = Math.random();
 
 
-    if(equipe1.getGeneralEquipe() > equipe2.getGeneralEquipe()){
-      probaVictoireE1 += 0.1;
-      probaVictoireE2 -= 0.1;
-    }
-    else{
-      probaVictoireE1 -= 0.1;
-      probaVictoireE2 += 0.1;
-    }
 
     //Attribution du nombre de tours pour chaque equipe
 
-    for(i = 0; i < 10; i++){
-      if(Math.random() < probaVictoireE1){
-        nbToursE1 += 1;
-      }
-      if(Math.random() < probaVictoireE2){
-        nbToursE2 += 1;
-      }
+    for(int i = 0; i < 10; i++){
+		double alea=Math.random();
+		if(alea < probaVictoireE1){
+        	nbToursE1 += 1;
+      	}
+      	if(alea < probaVictoireE2){
+      		nbToursE2 += 1;
+      	}
     }
 
     //Debut du match, les buts sont marques avec une probabilite probaVictoire a chaque tour. Le nombre de tours a ete donne precedemment.
 
-    for(i = 0; i < nbToursE1; i++){
-      if(Math.random() < probaVictoireE1){
-        nbButsE1 += 1;
-      }
-      if(Math.random() < probaVictoireE2){
-        nbButsE2 += 1;
-      }
+	for(int i = 0; i < nbToursE1; i++){
+    	double alea=Math.random();
+		if(alea < probaVictoireE1){
+        	nbButsE1 += 1;
+     	}
+	}
+	for(int i = 0; i < nbToursE2; i++){
+    	double alea=Math.random();
+     	if(alea < probaVictoireE2){
+        	nbButsE2 += 1;
+    	}
     }
 
     //Fin du match
@@ -80,7 +79,7 @@ public class Match{
       equipe1.nombreButsMarques(nbButsE1);
       equipe2.nombreButsMarques(nbButsE2);
 
-      System.out.println(equipe2.getNomEquipe()+" a battu "+equipe1.getNomEquipe()+". Le score est de : "+nbButsE2+" - "+nbButsE1);
+      System.out.println(equipe2.getNomEquipe()+" a battu "+equipe1.getNomEquipe()+". Le score est de : "+nbButsE1+" - "+nbButsE2);
       System.out.println("");
     }
     if(nbButsE1 == nbButsE2){

@@ -23,7 +23,7 @@ public abstract class Personne{
 	public String getNom(){
 		return nom;
 	}
-	
+
 	public String getNationalite(){
 		return nationalite;
 	}
@@ -31,4 +31,6 @@ public abstract class Personne{
 	public String toString(){
 		return  "[ -"+id+"- "+nom+" , "+nationalite+" ]";
 	}
+	
+	public abstract String getRole();
 }

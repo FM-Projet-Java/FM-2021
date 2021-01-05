@@ -38,7 +38,9 @@ public class Joueur extends Personne{
 	public int getGeneralJoueur(){
     	return general;
   	}
-	
+	public String getRole(){
+		return "Joueur";
+	}
 	public String toString(){
 	String res=super.toString();
 	res+=" --- General : "+general+"--- Moral : "+moral+" --- Equipe : ";
