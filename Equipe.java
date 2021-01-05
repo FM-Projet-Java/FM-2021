@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Equipe{
   private Joueur[] listJoueurs = new Joueur[11];
   protected String nomEquipe;
@@ -85,20 +87,34 @@ public class Equipe{
   }
 
 
-  public void ajouterListeEquipesRencontres(Equipe equipe1){
-    listeEquipesRencontres.add(equipe1);
+  public void ajouterListeEquipesRencontres(Equipe equipe1){ //Ajoute une equipe a la liste des equipes rencontrees par cette equipe
+    listeEquipesRencontres.add(equipe1.getNomEquipe());
   }
 
-  public void getListeEquipesRencontres(String nomEquipe){
+  public boolean equipeDejaRencontre(String nomEquipe){ //Renvoie true si l'equipe passee en argument a deja joue contre cette equipe. Renvoie false sinon
     int i;
-    for(i = 0; i < listeEquipesRencontres.size(); i++)
-      if(listeEquipesRencontres.get(i).getNomEquipe() == nomEquipe){
-        return
+    for(i = 0; i < listeEquipesRencontres.size(); i++){
+      if(listeEquipesRencontres.get(i) == nomEquipe){
+        return true;
       }
+    }
+    return false;
   }
 
-  public void incrementeMatchJoues(){
+  public void incrementeMatchJoues(){ //Ajoute 1 aux matchs joues
     matchsJoues += 1;
+  }
+
+  public int getNbMatchJoues(){ //Renvoie le nombre de matchs joues de l'equipe
+    return matchsJoues;
+  }
+
+  public void setNbMatchJoues(int nbMatchsJoues){ //Definit un nouveau nombre de match joues de l'equipe
+    matchsJoues = nbMatchsJoues;
+  }
+
+  public int getNbPointsEquipe(){ //Renvoie le nombre de points de l'equipe
+    return nbPoints;
   }
 
 }

@@ -71,6 +71,7 @@ public class Match{
       equipe2.nombreButsMarques(nbButsE2);
 
       System.out.println(equipe1.getNomEquipe()+" a battu "+equipe2.getNomEquipe()+". Le score est de : "+nbButsE1+" - "+nbButsE2);
+      System.out.println("");
     }
     if(nbButsE1 < nbButsE2){
       equipe1.defaite();
@@ -80,6 +81,7 @@ public class Match{
       equipe2.nombreButsMarques(nbButsE2);
 
       System.out.println(equipe2.getNomEquipe()+" a battu "+equipe1.getNomEquipe()+". Le score est de : "+nbButsE2+" - "+nbButsE1);
+      System.out.println("");
     }
     if(nbButsE1 == nbButsE2){
       equipe1.matchNul();
@@ -89,6 +91,7 @@ public class Match{
       equipe2.nombreButsMarques(nbButsE2);
 
       System.out.println(equipe2.getNomEquipe()+" et "+equipe1.getNomEquipe()+" on fait match nul. Le score est de : "+nbButsE1+" - "+nbButsE2);
+      System.out.println("");
     }
 
 
