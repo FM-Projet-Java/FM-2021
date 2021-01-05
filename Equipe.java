@@ -7,12 +7,15 @@ public class Equipe{
     this.nomEquipe = nomEquipe;
     for(i = 0; i < listJoueurs.length; i++)
       listJoueurs[i] = new Joueur();
+      listJoueurs[i].changerEquipeActuelle(nomEquipe);
 
   }
 
 
-  public changerNomEquipe(String nouveauNom){
+  public void changerNomEquipe(String nouveauNom){
+    System.out.println("L'equipe : "+nomEquipe+" s'appelle maintenant : "+nouveauNom);
     nomEquipe = nouveauNom;
+
   }
 
 }
