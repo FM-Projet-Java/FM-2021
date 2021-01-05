@@ -27,7 +27,17 @@ public class Championnat{
     }
   }
 
+  public Equipe getEquipe(int i){
+    return classement.get(i);
+  }
 
-
-
+  public void journeeDeMatch(){
+    int i = 0;
+    int j = 0;
+    for(i = 0; i < classement.size(); i++){
+      for(j = 0; i < classement.size(); i++){
+        if(classement.get(i) != classement.get(j))
+      }
+    }
+  }
 }

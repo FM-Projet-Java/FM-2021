@@ -6,14 +6,21 @@ public class Equipe{
   private int nbDefaites = 0;
   private int nbMatchNul = 0;
   private int nbButsMarques = 0;
+  private int generalEquipe = 0;
+  private ArrayList<String> listeEquipesRencontres = new ArrayList<String>();
+  private int matchsJoues = 0;
 
   public Equipe(String nomEquipe){ //Constructeur qui necessite le nom de l'equipe
     int i;
     this.nomEquipe = nomEquipe;
+    listeEquipesRencontres.add(nomEquipe);
     for(i = 0; i < 11; i++){
       listJoueurs[i] = new Joueur();
       listJoueurs[i].changerEquipeActuelle(nomEquipe);
+      generalEquipe += listJoueurs[i].getGeneralJoueur();
+
     }
+
   }
 
 
@@ -73,5 +80,25 @@ public class Equipe{
     nbButsMarques += buts;
   }
 
+  public int getGeneralEquipe(){ //Renvoie le general de l'equipe
+    return generalEquipe;
+  }
+
+
+  public void ajouterListeEquipesRencontres(Equipe equipe1){
+    listeEquipesRencontres.add(equipe1);
+  }
+
+  public void getListeEquipesRencontres(String nomEquipe){
+    int i;
+    for(i = 0; i < listeEquipesRencontres.size(); i++)
+      if(listeEquipesRencontres.get(i).getNomEquipe() == nomEquipe){
+        return
+      }
+  }
+
+  public void incrementeMatchJoues(){
+    matchsJoues += 1;
+  }
 
 }

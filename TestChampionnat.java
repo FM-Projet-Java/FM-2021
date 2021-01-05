@@ -4,6 +4,8 @@ public class TestChampionnat{
     Championnat ligue1 = new Championnat();
     ligue1.afficherClassement();
 
+    Match match1 = new Match(ligue1.getEquipe(0), ligue1.getEquipe(1));
+    match1.simulationMatch();
 
 
 

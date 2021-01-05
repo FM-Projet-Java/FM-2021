@@ -1,6 +1,6 @@
 public class Joueur{
   private String nomJoueur;
-  private int general;
+  private int general = 1;
   private int moral;
   private String nationalite;
   private String[] listeNationalites = {"Francais","Allemand","Anglais","Espagnol"};
@@ -17,7 +17,7 @@ public class Joueur{
   private String EquipeActuelle;
 
   public Joueur(){
-    this.general = 1 + (int)(Math.random() * ((10 - 1) + 1));
+    this.general = 1 + (int)(Math.random() * 9);
     nationalite = listeNationalites[(int)(Math.random() * (listeNationalites.length))];
     idJoueur = compt++;
 
@@ -57,6 +57,10 @@ public class Joueur{
 
   public void afficherEquipeJoueur(){
     System.out.println(nomJoueur+" est actuellement en contrat avec "+EquipeActuelle);
+  }
+
+  public int getGeneralJoueur(){
+    return general;
   }
 
 }
