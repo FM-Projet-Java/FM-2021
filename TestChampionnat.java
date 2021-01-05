@@ -1,8 +1,9 @@
 public class TestChampionnat{
   public static void main(String[] args){
 
-    Championnat Ligue1 = new Championnat();
-    Ligue1.afficherClassement();
+    Championnat ligue1 = new Championnat();
+    ligue1.afficherClassement();
+
 
 
 

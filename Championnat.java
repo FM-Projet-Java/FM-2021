@@ -23,7 +23,7 @@ public class Championnat{
   public void afficherClassement(){
     int i;
     for(i = 0; i < classement.size(); i++){
-      System.out.println(i+1+". "+classement.get(i));
+      System.out.println(i+1+". "+classement.get(i).getNomEquipe());
     }
   }
 

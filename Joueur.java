@@ -18,31 +18,31 @@ public class Joueur{
 
   public Joueur(){
     this.general = 1 + (int)(Math.random() * ((10 - 1) + 1));
-    nationalite = listeNationalites[0 + (int)(Math.random() * ((listeNationalites.length - 0) + 1))];
+    nationalite = listeNationalites[(int)(Math.random() * (listeNationalites.length))];
     idJoueur = compt++;
 
     if(nationalite == "Francais")
-    this.nomJoueur = listePrenomJoueursFr[0 + (int)(Math.random() * ((listePrenomJoueursFr.length - 0) + 1))]+" "+listeNomJoueursFr[0 + (int)(Math.random() * ((listeNomJoueursFr.length - 0) + 1))];
+    this.nomJoueur = listePrenomJoueursFr[(int)(Math.random() * (listePrenomJoueursFr.length))]+" "+listeNomJoueursFr[(int)(Math.random() * (listeNomJoueursFr.length))];
     if(nationalite == "Allemand")
-    this.nomJoueur = listePrenomJoueursFr[0 + (int)(Math.random() * ((listePrenomJoueursAll.length - 0) + 1))]+" "+listeNomJoueursAll[0 + (int)(Math.random() * ((listeNomJoueursAll.length - 0) + 1))];
+    this.nomJoueur = listePrenomJoueursFr[(int)(Math.random() * (listePrenomJoueursAll.length))]+" "+listeNomJoueursAll[(int)(Math.random() * (listeNomJoueursAll.length))];
     if(nationalite == "Anglais")
-    this.nomJoueur = listePrenomJoueursAng[0 + (int)(Math.random() * ((listePrenomJoueursAng.length - 0) + 1))]+" "+listeNomJoueursAng[0 + (int)(Math.random() * ((listeNomJoueursAng.length - 0) + 1))];
+    this.nomJoueur = listePrenomJoueursAng[(int)(Math.random() * (listePrenomJoueursAng.length))]+" "+listeNomJoueursAng[(int)(Math.random() * (listeNomJoueursAng.length))];
     if(nationalite == "Espagnol")
-    this.nomJoueur = listePrenomJoueursEsp[0 + (int)(Math.random() * ((listePrenomJoueursEsp.length - 0) + 1))]+" "+listeNomJoueursEsp[0 + (int)(Math.random() * ((listeNomJoueursEsp.length - 0) + 1))];
+    this.nomJoueur = listePrenomJoueursEsp[(int)(Math.random() * (listePrenomJoueursEsp.length))]+" "+listeNomJoueursEsp[(int)(Math.random() * (listeNomJoueursEsp.length))];
 
   }
 
   public Joueur(String nom, int general){
     this.nomJoueur = nom;
     this.general = general;
-    nationalite = listeNationalites[0 + (int)(Math.random() * ((listeNationalites.length - 0) + 1))];
+    nationalite = listeNationalites[(int)(Math.random() * (listeNationalites.length))];
     idJoueur = compt++;
   }
 
   public Joueur(String nom){
     this.nomJoueur = nom;
-    this.general = 1 + (int)(Math.random() * ((10 - 1) + 1));
-    nationalite = listeNationalites[0 + (int)(Math.random() * ((listeNationalites.length - 0) + 1))];
+    this.general = 1 + (int)(Math.random() * 10);
+    nationalite = listeNationalites[(int)(Math.random() * (listeNationalites.length))];
     idJoueur = compt++;
 
   }
@@ -51,7 +51,12 @@ public class Joueur{
     EquipeActuelle = nouvelleEquipe;
   }
 
+  public String afficherNomJoueur(){
+    return nomJoueur;
+  }
 
-
+  public void afficherEquipeJoueur(){
+    System.out.println(nomJoueur+" est actuellement en contrat avec "+EquipeActuelle);
+  }
 
 }
