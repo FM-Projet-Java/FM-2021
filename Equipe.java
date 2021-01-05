@@ -13,12 +13,12 @@ public class Equipe{
   private int matchsJoues = 0;
 
   public Equipe(String nomEquipe){ //Constructeur qui necessite le nom de l'equipe
-    int i;
+  
     this.nomEquipe = nomEquipe;
     listeEquipesRencontres.add(nomEquipe);
-    for(i = 0; i < 11; i++){
+    for(int i = 0; i < 11; i++){
       listJoueurs[i] = new Joueur();
-      listJoueurs[i].changerEquipeActuelle(nomEquipe);
+      listJoueurs[i].changerEquipeActuelle(this);
       generalEquipe += listJoueurs[i].getGeneralJoueur();
 
     }
@@ -36,7 +36,7 @@ public class Equipe{
   public void afficherJoueurs(){ //Affiche la liste des joueurs de l'equipe
     int i;
     for(i = 0; i < 11; i++){
-      System.out.println(listJoueurs[i].afficherNomJoueur());
+      System.out.println(listJoueurs[i].getNom());
     }
   }
 
