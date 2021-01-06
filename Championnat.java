@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Championnat{
   private ArrayList<Equipe> classement = new ArrayList<Equipe>();
@@ -21,23 +22,23 @@ public class Championnat{
   }
 
   public void actualiserClassement(){
-    ArrayList<Equipe> classementActualise = new ArrayList<Equipe>();
     int i,j;
     int maxNbPoints = 0;
-    Equipe equipeMax = new Equipe("temporaire");
+    int indiceMax = 0;
+
+
 
     for(i = 0; i < classement.size(); i++){
       for(j = 0; j < classement.size(); j++){
         if(maxNbPoints < classement.get(j).getNbPointsEquipe()){
           maxNbPoints = classement.get(j).getNbPointsEquipe();
-          equipeMax = classement.get(j);
-          System.out.println(classement.get(j).getNbPointsEquipe());
-          classement.remove(j);
+          indiceMax = j;
         }
       }
-      classementActualise.add(equipeMax);
-      maxNbPoints = 0;
+      Collections.swap(classement, indiceMax, 19);
     }
+
+
   }
 
 
