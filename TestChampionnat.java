@@ -15,5 +15,11 @@ public class TestChampionnat{
 
     	ligue1.afficherClassement();
 
+      ligue1.journeeDeMatch();
+
+      ligue1.actualiserClassement();
+
+      ligue1.afficherClassement();
+
   }
 }
