@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Championnat{
   private ArrayList<Equipe> classement = new ArrayList<Equipe>();
@@ -25,6 +24,7 @@ public class Championnat{
     int i,j;
     int maxNbPoints = 0;
     int indiceMax = 0;
+    ArrayList<Equipe> classementActualise = new ArrayList<Equipe>();
 
 
 
@@ -35,7 +35,8 @@ public class Championnat{
           indiceMax = j;
         }
       }
-      Collections.swap(classement, indiceMax, 19);
+      classementActualise.add(classement.get(indiceMax));
+      classement.remove(indiceMax);
     }
 
 
