@@ -28,7 +28,7 @@ public class Championnat{
 
 
 
-    for(i = 0; i < classement.size(); i++){
+    for(i = 0; i < 20; i++){
       for(j = 0; j < classement.size(); j++){
         if(maxNbPoints < classement.get(j).getNbPointsEquipe()){
           maxNbPoints = classement.get(j).getNbPointsEquipe();
