@@ -20,7 +20,7 @@ public class Match{
 
 
   public void simulationMatch() throws JoueursManquantException{
-	/* On regarde si les deux equipes bien de 11 joueurs */
+	/* On regarde si les deux equipes bien de 11 joueurs 
 	if(equipe1.estComplete()==false){
 		equipe2.victoire();
       	equipe1.defaite();
@@ -35,7 +35,8 @@ public class Match{
       	System.out.println(equipe1.getNomEquipe()+" a battu "+equipe2.getNomEquipe());
       	System.out.println("");
       	throw new JoueursManquantException("Lancement de TabPleinException");
-	}
+	}*/
+	
     /* Les Matchs se derouleront selon le systeme suivant :
     On ajuste la probaVictoire de chaque equipe en fonction de leurs statistiques.
     On fait une boucle qui s'arrete a 10 (par soucis de realisme) qui ajoute un tour au nombre de tour de l'equipe si le nombreAleatoire est inferieure a probaVictoire
@@ -73,7 +74,7 @@ public class Match{
     }
 	//Gestion de la blessure des joueurs de chaque equipe : Les joueurs une probabilité "probaBlessure" de se blesser, ils sont alors retirés de leur equipe 
 	//et plus apte a jouer au prochain match.
-	for (int i=0;i < 11; i++){
+	/*for (int i=0;i < 11; i++){
 		double alea=Math.random();
 		if(alea < probaBlessure){
         	equipe1.RetirerJoueur(i);
@@ -84,7 +85,7 @@ public class Match{
 		if(alea < probaBlessure){
         	equipe2.RetirerJoueur(i);
         }
-	}
+	}*/
     //Fin du match
 
     //Application des resultats du match aux equipes participantes.
