@@ -26,7 +26,7 @@ public class Equipe{
   }
   	public boolean estComplete(){
   		for(int i=0;i<listJoueurs.length;i++){
-			if (listJoueurs[i]==null){
+			if (listJoueurs[i]=null){
 				return false;
 			}
   		}
@@ -34,8 +34,8 @@ public class Equipe{
   	}
 	public void RetirerJoueur(Joueur joueur){
 		for(int i=0;i<listJoueurs.length;i++){
-			if(joueur==listJoueurs[i]){
-				listJoueurs[i]=null; 
+			if (joueur==listJoueurs[i]){
+				listJoueurs[i]=null;
 			}
 		}
 	}
