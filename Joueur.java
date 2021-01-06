@@ -35,7 +35,7 @@ public class Joueur extends Personne{
 		}
 	}
 	public void gainMoral(){
-		if moral(<100){
+		if (moral<100){
 			moral++;
 		}
 	}

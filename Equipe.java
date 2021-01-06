@@ -26,19 +26,16 @@ public class Equipe{
   }
   	public boolean estComplete(){
   		for(int i=0;i<listJoueurs.length;i++){
-			if (listJoueurs[i]=null){
+			if (listJoueurs[i]==null){
 				return false;
 			}
   		}
   		return true;
   	}
-	public void RetirerJoueur(Joueur joueur){
-		for(int i=0;i<listJoueurs.length;i++){
-			if (joueur==listJoueurs[i]){
-				listJoueurs[i]=null;
-			}
-		}
+	public void RetirerJoueur(int i){
+		listJoueurs[i]=null;
 	}
+
 
   public void changerNomEquipe(String nouveauNom){ //Change le nom de l'equipe
     System.out.println("L'equipe : "+nomEquipe+" s'appelle maintenant : "+nouveauNom);
@@ -66,7 +63,9 @@ public class Equipe{
   public void victoire(){ //Applique les effets d'une victoire a l'equipe
     nbPoints += 3;
     nbVictoires += 1;
-    
+    for(int i=0;i<listJoueurs.length;i++){
+		listJoueurs[i].gainMoral();
+	}
   }
 
   public void matchNul(){ //Applique les effets d'un match nul a l'equipe
@@ -76,6 +75,9 @@ public class Equipe{
 
   public void defaite(){ //Applique les effets d'une defaite a l'equipe
     nbDefaites += 1;
+    for(int i=0;i<listJoueurs.length;i++){
+		listJoueurs[i].perteMoral();
+	}
   }
 
   public void appliqueResultatMatch(String resultat){  //Prend en argument V pour victoire, D pour defaite et N pour match nul. Cette fonction applique le résultat d'un match aux stats de l'equipe

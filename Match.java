@@ -22,11 +22,19 @@ public class Match{
   public void simulationMatch() throws JoueursManquantException{
 	/* On regarde si les deux equipes bien de 11 joueurs */
 	if(equipe1.estComplete()==false){
+		equipe2.victoire();
+      	equipe1.defaite();
+      	System.out.println(equipe2.getNomEquipe()+" a battu "+equipe1.getNomEquipe());
+      	System.out.println("");
 		throw new JoueursManquantException("Lancement de TabPleinException");
-		
+      	
 	}
 	if(equipe2.estComplete()==false){
-		throw new JoueursManquantException("Lancement de TabPleinException");
+		equipe1.victoire();
+      	equipe2.defaite();
+      	System.out.println(equipe1.getNomEquipe()+" a battu "+equipe2.getNomEquipe());
+      	System.out.println("");
+      	throw new JoueursManquantException("Lancement de TabPleinException");
 	}
     /* Les Matchs se derouleront selon le systeme suivant :
     On ajuste la probaVictoire de chaque equipe en fonction de leurs statistiques.
@@ -35,8 +43,6 @@ public class Match{
     L'equipe victorieuse est l'equipe qui a marque le plus de buts.
     Si les nb de buts marques de chaque equipe sont egaux il y a match nul.
     */
-
-
 
 
     //Attribution du nombre de tours pour chaque equipe
@@ -65,7 +71,20 @@ public class Match{
         	nbButsE2 += 1;
     	}
     }
-
+	//Gestion de la blessure des joueurs de chaque equipe : Les joueurs une probabilité "probaBlessure" de se blesser, ils sont alors retirés de leur equipe 
+	//et plus apte a jouer au prochain match.
+	for (int i=0;i < 11; i++){
+		double alea=Math.random();
+		if(alea < probaBlessure){
+        	equipe1.RetirerJoueur(i);
+        }
+	}
+	for (int i=0;i < 11; i++){
+		double alea=Math.random();
+		if(alea < probaBlessure){
+        	equipe2.RetirerJoueur(i);
+        }
+	}
     //Fin du match
 
     //Application des resultats du match aux equipes participantes.
