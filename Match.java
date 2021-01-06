@@ -15,7 +15,7 @@ public class Match{
     // On confere une proba de victoire aux equipes selon leur general
     probaVictoireE1=0.5+(((double)(equipe1.getGeneralEquipe())-(double)(equipe2.getGeneralEquipe()))/1000) ;
     probaVictoireE2=0.5+(((double)(equipe2.getGeneralEquipe())-(double)(equipe1.getGeneralEquipe()))/1000);
-    
+
   }
 
 
@@ -27,7 +27,7 @@ public class Match{
       	System.out.println(equipe2.getNomEquipe()+" a battu "+equipe1.getNomEquipe());
       	System.out.println("");
 		throw new JoueursManquantException("Lancement de TabPleinException");
-      	
+
 	}
 	if(equipe2.estComplete()==false){
 		equipe1.victoire();
@@ -72,7 +72,7 @@ public class Match{
         	nbButsE2 += 1;
     	}
     }
-	//Gestion de la blessure des joueurs de chaque equipe : Les joueurs une probabilité "probaBlessure" de se blesser, ils sont alors retirés de leur equipe 
+	//Gestion de la blessure des joueurs de chaque equipe : Les joueurs une probabilité "probaBlessure" de se blesser, ils sont alors retirés de leur equipe
 	//et plus apte a jouer au prochain match.
 	/*for (int i=0;i < 11; i++){
 		double alea=Math.random();
