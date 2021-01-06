@@ -26,7 +26,7 @@ public class Equipe{
   }
   	public boolean estComplete(){
   		for(int i=0;i<listJoueurs.length;i++){
-			if (listJoueurs[i]=null){
+			if (listJoueurs[i]==null){
 				return false;
 			}
   		}
@@ -34,7 +34,7 @@ public class Equipe{
   	}
 	public void RetirerJoueur(Joueur joueur){
 		for(int i=0;i<listJoueurs.length;i++){
-			if (joueur==listJoueurs[i]){
+			if(joueur==listJoueurs[i]){
 				listJoueurs[i]=null;
 			}
 		}
@@ -66,6 +66,7 @@ public class Equipe{
   public void victoire(){ //Applique les effets d'une victoire a l'equipe
     nbPoints += 3;
     nbVictoires += 1;
+    
   }
 
   public void matchNul(){ //Applique les effets d'un match nul a l'equipe

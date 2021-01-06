@@ -25,19 +25,20 @@ public class Championnat{
     int maxNbPoints = 0;
     int indiceMax = 0;
     ArrayList<Equipe> classementActualise = new ArrayList<Equipe>();
+    int tailleClassement = classement.size();
 
-
-
-    for(i = 0; i < 20; i++){
+    for(i = 0; i < tailleClassement; i++){
       for(j = 0; j < classement.size(); j++){
-        if(maxNbPoints < classement.get(j).getNbPointsEquipe()){
+        if(maxNbPoints <= classement.get(j).getNbPointsEquipe()){
           maxNbPoints = classement.get(j).getNbPointsEquipe();
           indiceMax = j;
         }
       }
       classementActualise.add(classement.get(indiceMax));
       classement.remove(indiceMax);
+      maxNbPoints = 0;
     }
+    classement = classementActualise;
 
 
   }
