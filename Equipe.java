@@ -24,7 +24,21 @@ public class Equipe{
     }
 
   }
-
+  	public boolean estComplete(){
+  		for(int i=0;i<listJoueurs.length;i++){
+			if listJoueurs[i]=)null{
+				return false;
+			}
+  		}
+  		return true;
+  	}
+	public void RetirerJoueur(Joueur joueur){
+		for(int i=0;i<listJoueurs.length;i++){
+			if joueur=listJoueurs[i]{
+				listJoueurs[i]=null; 
+			}
+		}
+	}
 
   public void changerNomEquipe(String nouveauNom){ //Change le nom de l'equipe
     System.out.println("L'equipe : "+nomEquipe+" s'appelle maintenant : "+nouveauNom);
