@@ -54,7 +54,7 @@ public class Championnat{
     return classement.get(i);
   }
 
-  public void journeeDeMatch(){
+  public void journeeDeMatch() throws JoueursManquantException{
     int i = 0;
     int j = 0;
 
