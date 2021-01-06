@@ -3,6 +3,7 @@ public class Match{
   private Equipe equipe2;
   private double probaVictoireE1 ;
   private double probaVictoireE2 ;
+  private double probaBlessure=0.01;
   private int nbToursE1 = 0;
   private int nbToursE2 = 0;
   private int nbButsE1 = 0;
@@ -18,10 +19,11 @@ public class Match{
   }
 
 
-  public void simulationMatch(){
+  public void simulationMatch() throws JoueursManquantException{
 	/* On regarde si les deux equipes bien de 11 joueurs */
 	if(equipe1.estComplete()==false){
 		throw new JoueursManquantException("Lancement de TabPleinException");
+		
 	}
 	if(equipe2.estComplete()==false){
 		throw new JoueursManquantException("Lancement de TabPleinException");

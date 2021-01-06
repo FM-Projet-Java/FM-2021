@@ -1,5 +1,5 @@
-public class JoueursManquantExcepetion extends Exception{
-	public JoueursManquantExcepetion(String message){
+public class JoueursManquantException extends Exception{
+	public JoueursManquantException(String message){
 		super(message);
 	}
 	public String toString(){
