@@ -32,17 +32,8 @@ public class Equipe{
   		}
   		return true;
   	}
-<<<<<<< HEAD
 	public void RetirerJoueur(int i){
 		listJoueurs[i]=null;
-=======
-	public void RetirerJoueur(Joueur joueur){
-		for(int i=0;i<listJoueurs.length;i++){
-			if(joueur==listJoueurs[i]){
-				listJoueurs[i]=null;
-			}
-		}
->>>>>>> e7015f829f97d6b375cba277625bae93e67cc80b
 	}
 
 
