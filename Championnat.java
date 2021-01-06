@@ -75,4 +75,27 @@ public class Championnat{
       }
     }
   }
+
+  public void journeeDeMatchRetour() throws JoueursManquantException{
+    int i = 0;
+    int j = 0;
+
+    /*On organise les matchs entre les equipes qui n'ont jamais joue contre
+    Toutes les equipes auront joue un match a la fin d'une journee*/
+
+    for(i = 0; i < classement.size(); i++){
+      for(j = 0; j < classement.size(); j++){
+        if(classement.get(i) != classement.get(j) && (classement.get(i).equipeDejaRencontre(classement.get(j).getNomEquipe())) && classement.get(i).getNbMatchJoues() == 1 && classement.get(j).getNbMatchJoues() == 1 ){
+          new Match(classement.get(i), classement.get(j)).simulationMatch();
+          classement.get(i).ajouterListeEquipesRencontres(classement.get(j));
+          classement.get(j).ajouterListeEquipesRencontres(classement.get(i));
+          classement.get(i).incrementeMatchJoues();
+          classement.get(j).incrementeMatchJoues();
+        }
+      }
+    }
+
+  }
+
+
 }
