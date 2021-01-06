@@ -3,7 +3,7 @@ public abstract class Personne{
 	private int id;
 	private String nationalite;
 	private String nom;
-	
+
 	public Personne(){
 		id=cpt++;
 		nationalite=Generate.Nationalite();
@@ -27,10 +27,10 @@ public abstract class Personne{
 	public String getNationalite(){
 		return nationalite;
 	}
-	
+
 	public String toString(){
 		return  "[ -"+id+"- "+nom+" , "+nationalite+" ]";
 	}
-	
+
 	public abstract String getRole();
 }

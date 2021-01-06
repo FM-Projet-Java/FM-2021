@@ -8,11 +8,11 @@ public class Generate{
   	private static final String[] listePrenomJoueursEsp = {"Hugo","Diego","Elio","Pablo","Elias","Esteban","Lorenzo","Ruben","Luis","Lisandro","Paco","Miguel"};
   	private static final String[] listePrenomJoueursAng = {"Bradley","Michael","Matthew","Joshua","Nicholas","Christopher","Joseph","Ethan","Andrew","Daniel","William","Anthony"};
   	private static final String[] listePrenomJoueursAll = {"Stephan","Wilfried","Ludwig","Lukas","Erwin","Hermann","Franz","Kurt","Fritz","Siegfried","Leni"};
-  	
+
   	public static String Nationalite(){
   	return listeNationalites[(int)(Math.random() * (listeNationalites.length))];
   	}
-  	
+
   	public static String Nom(String nationalite){
   	if(nationalite == "Francais")
     return listePrenomJoueursFr[(int)(Math.random() * (listePrenomJoueursFr.length))]+" "+listeNomJoueursFr[(int)(Math.random() * (listeNomJoueursFr.length))];
