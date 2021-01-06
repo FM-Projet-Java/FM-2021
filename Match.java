@@ -19,7 +19,13 @@ public class Match{
 
 
   public void simulationMatch(){
-
+	/* On regarde si les deux equipes bien de 11 joueurs */
+	if(equipe1.estComplete()==false){
+		throw new JoueursManquantException("Lancement de TabPleinException");
+	}
+	if(equipe2.estComplete()==false){
+		throw new JoueursManquantException("Lancement de TabPleinException");
+	}
     /* Les Matchs se derouleront selon le systeme suivant :
     On ajuste la probaVictoire de chaque equipe en fonction de leurs statistiques.
     On fait une boucle qui s'arrete a 10 (par soucis de realisme) qui ajoute un tour au nombre de tour de l'equipe si le nombreAleatoire est inferieure a probaVictoire
