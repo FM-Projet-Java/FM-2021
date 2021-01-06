@@ -29,7 +29,16 @@ public class Joueur extends Personne{
     	equipe = nouvelleEquipe;
 	}
 
-
+	public void perteMoral(){
+		if(moral>0){
+			moral--;
+		}
+	}
+	public void gainMoral(){
+		if moral(<100){
+			moral++;
+		}
+	}
 
 	public void afficherEquipeJoueur(){
     	System.out.println(nomJoueur+" est actuellement en contrat avec "+equipe.getNomEquipe());

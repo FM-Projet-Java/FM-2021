@@ -66,6 +66,7 @@ public class Equipe{
   public void victoire(){ //Applique les effets d'une victoire a l'equipe
     nbPoints += 3;
     nbVictoires += 1;
+    
   }
 
   public void matchNul(){ //Applique les effets d'un match nul a l'equipe
