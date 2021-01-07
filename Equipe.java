@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-/** Classe de correspondant a une equipe de football, constitué d'un tableau de 11 Joueur, d'un coach, et d'un entraineur.
+/** Classe de correspondant à une équipe de football, constitué d'un tableau de 11 Joueur, d'un coach, et d'un entraineur.
    *Le reste des variable d'instance correspondent aux statistiques de l'équipe
     */
 public class Equipe{

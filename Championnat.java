@@ -1,3 +1,4 @@
+package JavaFootballSimulation;
 import java.util.ArrayList;
 
 /** Classe qui permet de simuler le deroulé d'un vrai Championnat de Football (ici Ligue 1) en réalisant des rencontres (aller/retour)
@@ -24,7 +25,7 @@ public class Championnat{
       classement.add(new Equipe(listeNomEquipe[i]));
     }
   }
-/** */
+/**Actualise le classement en triant les equipes par leur nombre de points*/
   public void actualiserClassement(){
     int i,j;
     int maxNbPoints = 0;
@@ -48,7 +49,7 @@ public class Championnat{
 
   }
 
-/** */
+/**Affiche le classement des equipes par nombre de points */
   public void afficherClassement(){
     int i;
     System.out.println("");
@@ -64,7 +65,7 @@ public class Championnat{
   public Equipe getEquipe(int i){
     return classement.get(i);
   }
-/** */
+/**Simule une journee de match c'est a dire un match pour chaque equipe. A la fin de la journee de match les equipes s'entrainent*/
   public void journeeDeMatch(){ //throws JoueursManquantException{
     int i = 0;
     int j = 0;
@@ -85,7 +86,7 @@ public class Championnat{
     }
     Entrainement.Entrainement(this.getClassement());
   }
-/** */
+/**Simule une journee de match retour. Les equipes ayant deja joue contre s'affrontent a nouveau. Cette methode doit etre precede de journeeDeMatch pour correctement fonctionner. A la fin de la journee de match les equipes s'entrainent*/
   public void journeeDeMatchRetour(){// throws JoueursManquantException{
     int i = 0;
     int j = 0;
@@ -107,7 +108,7 @@ public class Championnat{
     Entrainement.Entrainement(this.getClassement());
 
   }
-/** */
+/**Simule une journee de math aller plus une journee de match retour*/
   public void matchAllerRetour(){// throws JoueursManquantException{
     System.out.println("");
     System.out.println("Journee de Matchs aller :");
@@ -124,7 +125,7 @@ public class Championnat{
     }
 
   }
-/** */
+/**Simule tout les matchs d'un championnat. Le vainqueur est annonce. */
   public void simulerChampionnat(){// throws JoueursManquantException{
     int i,j;
 
@@ -144,7 +145,7 @@ public class Championnat{
 
 
   }
-/** */
+/**Simule 100 championnats et donne un classement par nombre de titres gagnes a la fin. */
   public void simulerSiecleChampionnat() {//throws JoueursManquantException{
     int i;
     for(i = 0; i < 100; i++){
@@ -152,7 +153,7 @@ public class Championnat{
     }
     this.afficherClassementTitresChampionnat();
   }
-/** */
+/**Affiche le classement des equipes par nombre de titres gagnes */
   public void afficherClassementTitresChampionnat(){ //throws JoueursManquantException{
     int i,j;
     int maxNbTitres = 0;
@@ -176,7 +177,7 @@ public class Championnat{
     this.afficherClassementTitres();
     System.out.println("");
   }
-/** */
+/**Methode completant afficherClassementTitresChampionnat */
   public void afficherClassementTitres(){
     int i;
     System.out.println("");

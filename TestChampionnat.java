@@ -1,3 +1,5 @@
+/** Permet de tester l'ensemble du programme, avec une simulation de plusieurs championnats*/
+
 public class TestChampionnat{
   public static void main(String[] args){
 
