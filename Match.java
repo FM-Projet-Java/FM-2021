@@ -18,8 +18,8 @@ public class Match{
     this.equipe1 = equipe1;
     this.equipe2 = equipe2;
 
-    probaVictoireE1=0.5+(((((double)(equipe1.getGeneralEquipe())-(double)(equipe2.getGeneralEquipe()))/1000000)+(double)(equipe1.getCoach().getCompetence())/100));
-    probaVictoireE2=0.5+(((((double)(equipe2.getGeneralEquipe())-(double)(equipe1.getGeneralEquipe()))/1000000)+(double)(equipe2.getCoach().getCompetence())/100));
+    probaVictoireE1=0.5+(((((double)(equipe1.getGeneralEquipe())-(double)(equipe2.getGeneralEquipe()))/10000)+(double)(equipe1.getCoach().getCompetence())/100));
+    probaVictoireE2=0.5+(((((double)(equipe2.getGeneralEquipe())-(double)(equipe1.getGeneralEquipe()))/10000)+(double)(equipe2.getCoach().getCompetence())/100));
 
   }
 

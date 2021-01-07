@@ -113,11 +113,11 @@ public class Championnat{
 /**Simule une journee de math aller plus une journee de match retour*/
   public void matchAllerRetour(){// throws JoueursManquantException{
     System.out.println("");
-    System.out.println("Journee de Matchs aller :");
+    System.out.println("||||||||||      Journee de Matchs aller       ||||||||||");
     System.out.println("");
     this.journeeDeMatch();
     System.out.println("");
-    System.out.println("Journee de Matchs retour");
+    System.out.println("||||||||||      Journee de Matchs retour       ||||||||||");
     System.out.println("");
     this.journeeDeMatchRetour();
     int i;
