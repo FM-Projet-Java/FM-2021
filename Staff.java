@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Classe abstraite correspondant aux membre du staff, ayant chacun un niveau de competence  */
 public abstract class Staff extends Personne{
 	private int competence; //Competence du membre du staff allant de 5 à 10

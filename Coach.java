@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Coach de l'équipe , il influe l'issu des matchs*/
 public class Coach extends Staff{
 

@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Permet de tester l'ensemble du programme, avec une simulation de plusieurs championnats*/
 
 public class TestChampionnat{
@@ -10,7 +9,7 @@ public class TestChampionnat{
     /*Match match1 = new Match(ligue1.getEquipe(0), ligue1.getEquipe(1));
     match1.simulationMatch();*/
 	//try{
-      ligue1.simulerSiecleChampionnat();
+      ligue1.simulerChampionnat();
 
 
 

@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Classe permettant de gerer un match entre deux equipes*/
 public class Match{
   private Equipe equipe1;

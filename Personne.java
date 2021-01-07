@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Classe abstraite correspondant a une personne, elle sert a generer nom et nationalite ( ainsi qu'un identifiant) */
 public abstract class Personne{
 	private static int cpt=1;

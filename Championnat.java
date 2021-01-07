@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 import java.util.ArrayList;
 
 /** Classe qui permet de simuler le deroulé d'un vrai Championnat de Football (ici Ligue 1) en réalisant des rencontres (aller/retour)
@@ -52,13 +51,16 @@ public class Championnat{
 /**Affiche le classement des equipes par nombre de points */
   public void afficherClassement(){
     int i;
+
     System.out.println("");
     System.out.println("Voici le classement actuel du championnat");
     System.out.println("");
+
     for(i = 0; i < classement.size(); i++){
       System.out.println(i+1+". "+classement.get(i).getNomEquipe()+String.format("%-6d", classement.get(i).getNbPointsEquipe()));
     }
   }
+
   public ArrayList<Equipe> getClassement(){
     return classement;
   }

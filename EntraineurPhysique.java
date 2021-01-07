@@ -1,4 +1,3 @@
-package JavaFootballSimulation;
 /** Entraineur Physique de l'equipe, il influe les entrainements*/
 public class EntraineurPhysique extends Staff{
 
