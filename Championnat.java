@@ -1,10 +1,15 @@
 import java.util.ArrayList;
 
+/** Classe qui permet de simuler le deroulé d'un vrai Championnat de Football (ici Ligue 1) en réalisant des rencontres (aller/retour)
+   *entre chaque equipe du classement
+*/
+
 public class Championnat{
   private ArrayList<Equipe> classement = new ArrayList<Equipe>();
   private String[] listeNomEquipe = {"Lyon","Lille","Paris-SG","Rennes","Marseille","Monaco","Lens","Montpellier","Angers","Metz","Brest","Nice","Bordeaux","Saint-Etienne","Reims","Nantes","Strasbourg","Lorient","Dijon","Nimes"};
+  private ArrayList<Equipe> classementTitres = new ArrayList<Equipe>();
 
-
+/** Constructeur à un paramètre, une liste de nom d'équipe, qui crée les equipes correspondantes et les ajoute au classement du championnat*/
   public Championnat(Equipe[] listeEquipes){
     int i;
     for(i = 0; i < listeEquipes.length; i++){
@@ -12,14 +17,14 @@ public class Championnat{
     }
   }
 
-
+/** Constructeur sans paramètre, qui prend les noms des equipes de Ligue 1 (Championnat De Football Français de 1ere division)*/
   public Championnat(){
     int i;
     for(i = 0; i < listeNomEquipe.length; i++){
       classement.add(new Equipe(listeNomEquipe[i]));
     }
   }
-
+/** */
   public void actualiserClassement(){
     int i,j;
     int maxNbPoints = 0;
@@ -43,20 +48,24 @@ public class Championnat{
 
   }
 
-
+/** */
   public void afficherClassement(){
     int i;
+    System.out.println("");
     System.out.println("Voici le classement actuel du championnat");
+    System.out.println("");
     for(i = 0; i < classement.size(); i++){
       System.out.println(i+1+". "+classement.get(i).getNomEquipe()+String.format("%-6d", classement.get(i).getNbPointsEquipe()));
     }
   }
-
+  public ArrayList<Equipe> getClassement(){
+    return classement;
+  }
   public Equipe getEquipe(int i){
     return classement.get(i);
   }
-
-  public void journeeDeMatch() throws JoueursManquantException{
+/** */
+  public void journeeDeMatch(){ //throws JoueursManquantException{
     int i = 0;
     int j = 0;
 
@@ -74,9 +83,10 @@ public class Championnat{
         }
       }
     }
+    Entrainement.Entrainement(this.getClassement());
   }
-
-  public void journeeDeMatchRetour() throws JoueursManquantException{
+/** */
+  public void journeeDeMatchRetour(){// throws JoueursManquantException{
     int i = 0;
     int j = 0;
 
@@ -94,7 +104,87 @@ public class Championnat{
         }
       }
     }
+    Entrainement.Entrainement(this.getClassement());
 
+  }
+/** */
+  public void matchAllerRetour(){// throws JoueursManquantException{
+    System.out.println("");
+    System.out.println("Journee de Matchs aller :");
+    System.out.println("");
+    this.journeeDeMatch();
+    System.out.println("");
+    System.out.println("Journee de Matchs retour");
+    System.out.println("");
+    this.journeeDeMatchRetour();
+    int i;
+    for(i = 0; i < classement.size(); i++){
+      classement.get(i).setMatchsJoues(0);
+      classement.get(i).resetListesDejaRencontres();
+    }
+
+  }
+/** */
+  public void simulerChampionnat(){// throws JoueursManquantException{
+    int i,j;
+
+    for(i = 0; i < 19; i++){
+      this.matchAllerRetour();
+      this.actualiserClassement();
+      this.afficherClassement();
+    }
+    System.out.println("----------------------------------------------------------------------------------------------");
+    System.out.println(classement.get(0).getNomEquipe()+" remporte le championnat !");
+    System.out.println("----------------------------------------------------------------------------------------------");
+    classement.get(0).incrementeNbTitres();
+
+    for(j = 0; j < classement.size(); j++){
+      classement.get(j).resetNbPoints();
+    }
+
+
+  }
+/** */
+  public void simulerSiecleChampionnat() {//throws JoueursManquantException{
+    int i;
+    for(i = 0; i < 100; i++){
+      this.simulerChampionnat();
+    }
+    this.afficherClassementTitresChampionnat();
+  }
+/** */
+  public void afficherClassementTitresChampionnat(){ //throws JoueursManquantException{
+    int i,j;
+    int maxNbTitres = 0;
+    int indiceMax = 0;
+    int tailleClassement = classement.size();
+    ArrayList<Equipe> classementCopie = classement;
+
+
+    for(i = 0; i < tailleClassement; i++){
+      for(j = 0; j < classementCopie.size(); j++){
+        if(maxNbTitres <= classementCopie.get(j).getNbTitres()){
+          maxNbTitres = classementCopie.get(j).getNbTitres();
+          indiceMax = j;
+        }
+      }
+      classementTitres.add(classementCopie.get(indiceMax));
+      classementCopie.remove(indiceMax);
+      maxNbTitres = 0;
+    }
+    System.out.println("");
+    this.afficherClassementTitres();
+    System.out.println("");
+  }
+/** */
+  public void afficherClassementTitres(){
+    int i;
+    System.out.println("");
+    System.out.println("Voici le classement des equipes en fonction du nombre de titres remportes");
+    System.out.println("");
+    for(i = 0; i < classementTitres.size(); i++){
+      System.out.println(i+1+". "+classementTitres.get(i).getNomEquipe()+String.format("%-6d", classementTitres.get(i).getNbTitres()));
+    }
   }
 
 

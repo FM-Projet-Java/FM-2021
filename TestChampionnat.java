@@ -6,18 +6,16 @@ public class TestChampionnat{
 
     /*Match match1 = new Match(ligue1.getEquipe(0), ligue1.getEquipe(1));
     match1.simulationMatch();*/
-	try{
-    	ligue1.journeeDeMatch();
-    	ligue1.actualiserClassement();
-    	ligue1.afficherClassement();
+	//try{
+      ligue1.simulerSiecleChampionnat();
 
-    	ligue1.journeeDeMatchRetour();
-      ligue1.actualiserClassement();
-      ligue1.afficherClassement();
 
-	} catch (JoueursManquantException e){
-		System.out.println("Le match ne peux pas se lancer ! "+e.getMessage()+",l'équipe n'étant pas complète a du déclarer forfait !");
-	  }
+
+
+
+	//} catch (JoueursManquantException e){
+		//System.out.println("Le match ne peux pas se lancer ! "+e.getMessage()+",l'equipe n'etant pas complete a du declarer forfait !");
+  //}
 
   }
 }

@@ -1,4 +1,6 @@
+/** Genere une nationalite, ainsi qu'un nom et prenom aleatoirement selon des listes predefinis en variable d'instance final*/
 public class Generate{
+
 	private static final String[] listeNationalites = {"Francais","Allemand","Anglais","Espagnol"};
   	private static final String[] listeNomJoueursFr = {"Martin","Bernard","Thomas","Petit","Robert","Richard","Durand","Dubois","Moreau","Laurent"};
   	private static final String[] listeNomJoueursEsp = {"Abril","Bautista","Cabrero","Delgado","Escobar","Franco","Garcea","Hortelano","Lutero","Mendoza"};
@@ -9,9 +11,13 @@ public class Generate{
   	private static final String[] listePrenomJoueursAng = {"Bradley","Michael","Matthew","Joshua","Nicholas","Christopher","Joseph","Ethan","Andrew","Daniel","William","Anthony"};
   	private static final String[] listePrenomJoueursAll = {"Stephan","Wilfried","Ludwig","Lukas","Erwin","Hermann","Franz","Kurt","Fritz","Siegfried","Leni"};
 
+/** Retourne une nationalite aleatoire*/
+
   	public static String Nationalite(){
   	return listeNationalites[(int)(Math.random() * (listeNationalites.length))];
   	}
+
+/** Retourne une combinaison nom + prenom aleatoire en fonction de la nationalite passé en parametre*/
 
   	public static String Nom(String nationalite){
   	if(nationalite == "Francais")

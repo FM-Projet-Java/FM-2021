@@ -1,3 +1,4 @@
+/** Classe abstraite correspondant a une personne, elle sert a generer nom et natio */
 public abstract class Personne{
 	private static int cpt=1;
 	private int id;
@@ -19,7 +20,7 @@ public abstract class Personne{
 		this.nationalite=nationalite;
 		this.nom=nom;
 	}
-	
+
 	public String getNom(){
 		return nom;
 	}
