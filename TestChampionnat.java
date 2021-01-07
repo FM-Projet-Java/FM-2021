@@ -5,11 +5,28 @@ public class TestChampionnat{
 
     Championnat ligue1 = new Championnat();
 
+    //Test de Match
+    //Match match1 = new Match(ligue1.getEquipe(0), ligue1.getEquipe(1));
+    //match1.simulationMatch();
 
-    /*Match match1 = new Match(ligue1.getEquipe(0), ligue1.getEquipe(1));
-    match1.simulationMatch();*/
-	//try{
-      ligue1.simulerSiecleChampionnat();
+
+
+
+  //try{
+
+
+
+      //Test de Match Aller Retour
+      //ligue1.matchAllerRetour();
+
+
+
+      //Test de simulation d'un championnat
+      ligue1.simulerChampionnat();
+
+
+      //Test de simulation de 100 championnats
+      //ligue1.simulerSiecleChampionnat();
 
 
 

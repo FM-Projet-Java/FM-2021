@@ -135,10 +135,11 @@ public class Championnat{
       this.matchAllerRetour();
       this.actualiserClassement();
       this.afficherClassement();
+      Thread.sleep(1000);
     }
-    System.out.println("----------------------------------------------------------------------------------------------");
+    System.out.println("--------------------------------------------------------------");
     System.out.println(classement.get(0).getNomEquipe()+" remporte le championnat !");
-    System.out.println("----------------------------------------------------------------------------------------------");
+    System.out.println("--------------------------------------------------------------");
     classement.get(0).incrementeNbTitres();
 
     for(j = 0; j < classement.size(); j++){
