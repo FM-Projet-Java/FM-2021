@@ -12,7 +12,7 @@ public class TestChampionnat{
 
 
 
-  //try{
+    //try{
 
 
 
@@ -22,7 +22,7 @@ public class TestChampionnat{
 
 
       //Test de simulation d'un championnat
-      ligue1.simulerChampionnat();
+      //ligue1.simulerChampionnat();
 
 
       //Test de simulation de 100 championnats
