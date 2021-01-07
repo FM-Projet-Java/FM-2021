@@ -1,5 +1,6 @@
+package JavaFootballSimulation;
 import java.util.ArrayList;
-//  Classe permettant d'incorporer des methodes static : entrainement , dans le but d'ameliorer les equipes
+/**  Classe permettant d'incorporer des methodes static : entrainement , dans le but d'ameliorer les equipes */
 public class Entrainement {
 
 //* Prend en paramètre une equipe, et ameliore le general de chacun de ses joueurs*/

@@ -1,3 +1,4 @@
+package JavaFootballSimulation;
 /** Genere une nationalite, ainsi qu'un nom et prenom aleatoirement selon des listes predefinis en variable d'instance final*/
 public class Generate{
 

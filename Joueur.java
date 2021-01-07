@@ -1,3 +1,4 @@
+package JavaFootballSimulation;
 /** Classe Joueur qui gere une instance pour un Joueur de Football*/
 
 public class Joueur extends Personne{
